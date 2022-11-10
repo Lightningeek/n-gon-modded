@@ -4,7 +4,7 @@ const tech = {
         tech.damage = 1
         for (let i = 0, len = tech.tech.length; i < len; i++) {
             tech.tech[i].count = 0
-            tech.tech[i].isLost = false
+            tech.tech[i].isLost = falseF
             tech.tech[i].isBanished = false
             tech.tech[i].remove();
             if (tech.tech[i].isJunk) {
@@ -2507,7 +2507,7 @@ const tech = {
             effect() {
                 tech.isCrouchRegen = true; //only used to check for requirements
                 m.regenEnergy = function() {
-                    if (m.immuneCycle < m.cycle && m.crouch) m.energy += 7 * m.fieldRegen;
+                    if (m.immuneCycle < m.walk_cycle) m.energy += 100 * m.fieldRegen;
                     if (m.energy < 0) m.energy = 0
                 }
             },
