@@ -4,7 +4,7 @@ const tech = {
         tech.damage = 1
         for (let i = 0, len = tech.tech.length; i < len; i++) {
             tech.tech[i].count = 0
-            tech.tech[i].isLost = falseF
+            tech.tech[i].isLost = false
             tech.tech[i].isBanished = false
             tech.tech[i].remove();
             if (tech.tech[i].isJunk) {
@@ -417,7 +417,7 @@ const tech = {
         {
             name: "first derivative",
             descriptionFunction() { return `while your <strong>first</strong> <strong class='color-g'>gun</strong> is equipped<br><strong>+15%</strong> <strong class='color-defense'>defense</strong> per <strong class='color-g'>gun</strong> <em>(${(100*(1-0.85 ** b.inventory.length)).toFixed(0)}%)</em>` },
-            maxCount: 1,
+            maxCount: 100,
             count: 0,
             frequency: 1,
             frequencyDefault: 1,
@@ -2254,7 +2254,7 @@ const tech = {
             frequency: 1,
             frequencyDefault: 1,
             allowed() {
-                return !tech.isPiezo && !tech.isRewindAvoidDeath && !tech.isAnnihilation //&& !tech.isAmmoFromHealth && !tech.isRewindGun
+                return !tech.isRewindAvoidDeath && !tech.isAnnihilation //&& !tech.isAmmoFromHealth && !tech.isRewindGun
             },
             requires: "not piezoelectricity, CPT, annihilation",
             effect() {
@@ -2272,7 +2272,7 @@ const tech = {
                     document.getElementById("health").style.display = "inline"
                     document.getElementById("health-bg").style.display = "inline"
                     document.getElementById("dmg").style.backgroundColor = "#f67";
-                    m.health = Math.max(Math.min(m.maxHealth, m.energy), 0.1);
+                    m.health = Math.max(Math.min(m.maxHealth, m.energy), 1);
                     simulation.mobDmgColor = "rgba(255,0,0,0.7)"
                     m.displayHealth();
                 }
@@ -2377,7 +2377,7 @@ const tech = {
             allowed() {
                 return !tech.isTimeCrystals
             },
-            requires: "not time crystals",
+            requires: "",
             effect() {
                 tech.isGroundState = true
                 m.setFieldRegen()
@@ -2519,7 +2519,7 @@ const tech = {
         {
             name: "energy conservation",
             description: "<strong>5%</strong> of <strong class='color-d'>damage</strong> done recovered as <strong class='color-f'>energy</strong>",
-            maxCount: 9,
+            maxCount: 100,
             count: 0,
             frequency: 1,
             frequencyDefault: 1,
@@ -7908,8 +7908,8 @@ const tech = {
             requires: "wormhole, not affine connection",
             effect() {
                 tech.isFreeWormHole = true
-                tech.baseFx *= 1
-                tech.baseJumpForce *= 1
+                tech.baseFx *= 2.00
+                tech.baseJumpForce *= 2.00
                 m.setMovement()
             },
             //also removed in m.setHoldDefaults() if player switches into a bad field
@@ -8065,8 +8065,7 @@ const tech = {
         //             }
         //         }, 1000); //every 1 seconds
         //     },
-        //     interval: 
-           ,
+        //     interval: undefined,
         //     remove() {
         //         if (this.count > 0) clearTimeout(this.interval);
         //     }
@@ -10375,14 +10374,14 @@ const tech = {
         {
             name: `undefined`,
             description: `<strong class="lore-text">this</strong>`,
-            maxCount: 1,
+            maxCount: 100,
             count: 0,
             frequency: 2,
             frequencyDefault: 2,
             isLore: true,
             // isExperimentHide: true,
             allowed() { return !build.isExperimentSelection },
-            requires: "NOT EXPERIMENT MODE",
+            requires: "",
             effect() {
                 if (localSettings.loreCount > lore.conversation.length - 1) { //reward for people done with lore chapters (or on the final chapter)
                     for (let i = mob.length - 1; i > -1; i--) { //replace mobs with starters
@@ -10437,7 +10436,7 @@ const tech = {
     //         tech.tech.push({
     //             name: `undefined`,
     //             description: `${lore.techCount+1}/${lore.techGoal}<br><em>add copies of <strong class="lore-text">this</strong> to the potential <strong class='color-m'>tech</strong> pool</em>`,
-    //             maxCount: 19,
+    //             maxCount: 1,
     //             count: 0,
     //             frequency: 2,
     //             isLore: true,
