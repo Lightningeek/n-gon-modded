@@ -7526,7 +7526,7 @@ const tech = {
             name: "time crystals",
             description: "<strong>+200%</strong> passive <strong class='color-f'>energy</strong> generation",
             isFieldTech: true,
-            maxCount: 1,
+            maxCount: 100,
             count: 0,
             frequency: 2,
             frequencyDefault: 2,
@@ -7908,8 +7908,8 @@ const tech = {
             requires: "wormhole, not affine connection",
             effect() {
                 tech.isFreeWormHole = true
-                tech.baseFx *= 0.66
-                tech.baseJumpForce *= 0.66
+                tech.baseFx *= 1
+                tech.baseJumpForce *= 1
                 m.setMovement()
             },
             //also removed in m.setHoldDefaults() if player switches into a bad field
