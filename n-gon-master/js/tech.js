@@ -776,7 +776,7 @@ const tech = {
             name: "microstates",
             link: `<a target="_blank" href='https://en.wikipedia.org/wiki/Microstate_(statistical_mechanics)' class="link">microstates</a>`,
             description: "for each active <strong>bullet / bot</strong><br><strong>+0.7%</strong> <strong class='color-d'>damage</strong>",
-            maxCount: 1,
+            maxCount: 100,
             count: 0,
             frequency: 1,
             frequencyDefault: 1,
@@ -8065,7 +8065,8 @@ const tech = {
         //             }
         //         }, 1000); //every 1 seconds
         //     },
-        //     interval: undefined,
+        //     interval: 
+           ,
         //     remove() {
         //         if (this.count > 0) clearTimeout(this.interval);
         //     }
@@ -10436,7 +10437,7 @@ const tech = {
     //         tech.tech.push({
     //             name: `undefined`,
     //             description: `${lore.techCount+1}/${lore.techGoal}<br><em>add copies of <strong class="lore-text">this</strong> to the potential <strong class='color-m'>tech</strong> pool</em>`,
-    //             maxCount: 1,
+    //             maxCount: 19,
     //             count: 0,
     //             frequency: 2,
     //             isLore: true,
