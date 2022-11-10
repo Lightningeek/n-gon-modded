@@ -5528,21 +5528,21 @@ const b = {
         {
             name: "shotgun", //1
             description: "fire a wide <strong>burst</strong> of short range <strong> bullets</strong>",
-            ammo: 0,
-            ammoPack: 3.5,
-            defaultAmmoPack: 3.5,
+            ammo: Infinity,
+            ammoPack: Infinity,
+            defaultAmmoPack: Infinity,
             have: false,
             do() {},
             fire() {
                 let knock, spread
                 if (input.down) {
-                    spread = 0.65
-                    m.fireCDcycle = m.cycle + Math.floor(73 * b.fireCDscale) // cool down
-                    if (tech.isShotgunImmune && m.immuneCycle < m.cycle + Math.floor(60 * b.fireCDscale)) m.immuneCycle = m.cycle + Math.floor(60 * b.fireCDscale); //player is immune to damage for 30 cycles
+                    spread = 0.01
+                    m.fireCDcycle = m.cycle + Math.floor(1 * b.fireCDscale) // cool down
+                    if (tech.isShotgunImmune && m.immuneCycle < m.cycle + Math.floor(1 * b.fireCDscale)) m.immuneCycle = m.cycle + Math.floor(60 * b.fireCDscale); //player is immune to damage for 30 cycles
                     knock = 0.01
                 } else {
-                    m.fireCDcycle = m.cycle + Math.floor(56 * b.fireCDscale) // cool down
-                    if (tech.isShotgunImmune && m.immuneCycle < m.cycle + Math.floor(47 * b.fireCDscale)) m.immuneCycle = m.cycle + Math.floor(47 * b.fireCDscale); //player is immune to damage for 30 cycles
+                    m.fireCDcycle = m.cycle + Math.floor(1 * b.fireCDscale) // cool down
+                    if (tech.isShotgunImmune && m.immuneCycle < m.cycle + Math.floor(1 * b.fireCDscale)) m.immuneCycle = m.cycle + Math.floor(47 * b.fireCDscale); //player is immune to damage for 30 cycles
                     spread = 1.3
                     knock = 0.1
                 }
