@@ -4477,7 +4477,7 @@ const tech = {
             frequency: 2,
             frequencyDefault: 2,
             allowed() {
-                return tech.isIceCrystals || tech.isSporeFreeze || (m.fieldUpgrades[m.fieldMode].name === "molecular assembler" && simulation.molecularMode === 2) || tech.isIceShot || tech.relayIce || tech.isNeedleIce || (m.coupling && m.fieldMode < 3)
+                return tech.isSporeFreeze || (m.fieldUpgrades[m.fieldMode].name === "molecular assembler" && simulation.molecularMode === 2) || tech.isIceShot || tech.relayIce || tech.isNeedleIce || (m.coupling && m.fieldMode < 3)
             },
             requires: "a freeze effect",
             effect() {
@@ -7488,11 +7488,11 @@ const tech = {
             requires: "time dilation",
             effect() {
                 tech.isTimeStop = true;
-                m.fieldHarmReduction = 0.66; //33% reduction
+                m.fieldHarmReduction = 0.99; //99% reduction
             },
             remove() {
                 tech.isTimeStop = false;
-                if (m.fieldUpgrades[m.fieldMode].name === "time dilation") m.fieldHarmReduction = 1;
+                if (m.fieldUpgrades[m.fieldMode].name === "time dilation") m.fieldHarmReduction = 0.99;
             }
         },
         {
@@ -7527,7 +7527,7 @@ const tech = {
             description: "<strong>+200%</strong> passive <strong class='color-f'>energy</strong> generation",
             isFieldTech: true,
             maxCount: 100,
-            count: 0,
+            count: 10,
             frequency: 2,
             frequencyDefault: 2,
             allowed() {
@@ -7908,8 +7908,8 @@ const tech = {
             requires: "wormhole, not affine connection",
             effect() {
                 tech.isFreeWormHole = true
-                tech.baseFx *= 2.00
-                tech.baseJumpForce *= 2.00
+                tech.baseFx *= 1.00
+                tech.baseJumpForce *= 1.00
                 m.setMovement()
             },
             //also removed in m.setHoldDefaults() if player switches into a bad field
