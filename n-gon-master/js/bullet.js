@@ -5531,20 +5531,20 @@ const b = {
             ammo: Infinity,
             ammoPack: Infinity,
             defaultAmmoPack: Infinity,
-            have: false,
+            have: true,
             do() {},
             fire() {
                 let knock, spread
                 if (input.down) {
-                    spread = 0.01
-                    m.fireCDcycle = m.cycle + Math.floor(1 * b.fireCDscale) // cool down
+                    spread = 1.00
+                    m.fireCDcycle = m.cycle + Math.floor(0.5 * b.fireCDscale) // cool down
                     if (tech.isShotgunImmune && m.immuneCycle < m.cycle + Math.floor(1 * b.fireCDscale)) m.immuneCycle = m.cycle + Math.floor(60 * b.fireCDscale); //player is immune to damage for 30 cycles
-                    knock = 0.01
+                    knock = 0.20
                 } else {
-                    m.fireCDcycle = m.cycle + Math.floor(1 * b.fireCDscale) // cool down
+                    m.fireCDcycle = m.cycle + Math.floor(0.5 * b.fireCDscale) // cool down
                     if (tech.isShotgunImmune && m.immuneCycle < m.cycle + Math.floor(1 * b.fireCDscale)) m.immuneCycle = m.cycle + Math.floor(47 * b.fireCDscale); //player is immune to damage for 30 cycles
                     spread = 1.3
-                    knock = 0.1
+                    knock = -0.10
                 }
 
                 if (tech.isShotgunReversed) {
