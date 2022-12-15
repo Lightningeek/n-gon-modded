@@ -6,4 +6,12 @@ being able to use up to 100x gun turret, being able to use more than 1 of more t
 
 This was created for EDUCATIONAL PURPOSES
 
-Download the zip file and extract all then go to the html
+Instructions:
+
+1: download the zip file
+
+2: go to the zip and extract all 
+
+3: go into the folders until you find index.html with chrome logo
+
+4: double click the index html to open the game
