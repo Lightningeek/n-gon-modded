@@ -6424,8 +6424,8 @@ const b = {
         }, {
             name: "grenades", //5
             description: "lob a single <strong>bouncy</strong> projectile<br><strong class='color-e'>explodes</strong> on <strong>contact</strong> or after one second",
-            ammo: 0,
-            ammoPack: 7,
+            ammo: 100e+69,
+            ammoPack: 100e+69,
             have: true,
             do() {}, //do is set in b.setGrenadeMode()
             fire() {
