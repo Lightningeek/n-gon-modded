@@ -6426,11 +6426,11 @@ const b = {
             description: "lob a single <strong>bouncy</strong> projectile<br><strong class='color-e'>explodes</strong> on <strong>contact</strong> or after one second",
             ammo: 0,
             ammoPack: 7,
-            have: false,
+            have: true,
             do() {}, //do is set in b.setGrenadeMode()
             fire() {
                 const countReduction = Math.pow(0.93, tech.missileCount)
-                m.fireCDcycle = m.cycle + Math.floor((input.down ? 35 : 27) * b.fireCDscale / countReduction); // cool down
+                m.fireCDcycle = m.cycle + Math.floor((input.down ? 1 : 1) * b.fireCDscale / countReduction); // cool down
                 const where = { x: m.pos.x + 30 * Math.cos(m.angle), y: m.pos.y + 30 * Math.sin(m.angle) }
                 const SPREAD = input.down ? 0.12 : 0.2
                 let angle = m.angle - SPREAD * (tech.missileCount - 1) / 2;
