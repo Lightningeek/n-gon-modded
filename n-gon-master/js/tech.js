@@ -5228,7 +5228,7 @@ const tech = {
             frequency: 2,
             frequencyDefault: 2,
             allowed() {
-                return tech.haveGunCheck("grenades") && !tech.isNeutronBomb && !tech.isCircleExplode && !tech.isPetalsExplode
+                return tech.haveGunCheck("grenades") && !tech.isNeutronBomb
             },
             requires: "grenades, not neutron bomb, pyrotechnics, fireworks",
             effect() {
@@ -5247,7 +5247,7 @@ const tech = {
             frequency: 2,
             frequencyDefault: 2,
             allowed() {
-                return tech.haveGunCheck("grenades") && !tech.isNeutronBomb && !tech.isClusterExplode && !tech.isPetalsExplode
+                return tech.haveGunCheck("grenades") && !tech.isNeutronBomb
             },
             requires: "grenades, not neutron bomb, flame test, fireworks",
             effect() {
@@ -5266,7 +5266,7 @@ const tech = {
             frequency: 2,
             frequencyDefault: 2,
             allowed() {
-                return tech.haveGunCheck("grenades") && !tech.isNeutronBomb && !tech.isClusterExplode && !tech.isCircleExplode
+                return tech.haveGunCheck("grenades") && !tech.isNeutronBomb
             },
             requires: "grenades, not neutron bomb, pyrotechnics, flame test",
             effect() {
