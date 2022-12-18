@@ -2,7 +2,7 @@
 Modded version of n-gon for educational purposes
 
 Some features include: shotgun rocket, fast grenades
-being able to use up to 100x gun turret, being able to use more than 1 of more tech ex: arsenal, or perimeter defense, time crystals being stackable, and charmed baryons not taking away movement speed.
+being able to use up to 100x gun turret, being able to use more than 1 of more tech ex: arsenal, or perimeter defense, time crystals being stackable, and charmed baryons not taking away movement speed, mass energy equivalence+piezoelectricity, and first derivative making you basically invincible.
 
 This was created for EDUCATIONAL PURPOSES
 
