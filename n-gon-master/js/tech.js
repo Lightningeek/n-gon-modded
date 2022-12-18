@@ -2234,7 +2234,7 @@ const tech = {
             frequency: 1,
             frequencyDefault: 1,
             allowed() {
-                return !tech.isEnergyHealth
+                return !tech.isHarmArmor
             },
             requires: "not mass-energy",
             effect() {
