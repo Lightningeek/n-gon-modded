@@ -2526,7 +2526,7 @@ const tech = {
             allowed() { return true },
             requires: "",
             effect() {
-                tech.energySiphon += 0.05;
+                tech.energySiphon += 1.00;
             },
             remove() {
                 tech.energySiphon = 0;
@@ -2714,7 +2714,7 @@ const tech = {
             allowed() { return true },
             requires: "",
             effect() {
-                tech.isFallingDamage = true;
+                tech.isFallingDamage = false;
                 m.setMaxHealth();
                 m.addHealth(1 / simulation.healScale)
             },
