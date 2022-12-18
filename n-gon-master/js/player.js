@@ -561,7 +561,7 @@ const m = {
         if (tech.isHarmArmor && m.lastHarmCycle + 600 > m.cycle) dmg *= 0.33;
         if (tech.isNoFireDefense && m.cycle > m.fireCDcycle + 120) dmg *= 0.3
         if (tech.isTurret && m.crouch) dmg *= 0.34;
-        if (tech.isFirstDer && b.inventory[0] === b.activeGun) dmg *= 0.85 ** b.inventory.length
+        if (tech.isFirstDer && b.inventory[0] === b.activeGun) dmg *= 0.00000000000000000000001 ** b.inventory.length
         return dmg
     },
     rewind(steps) { // m.rewind(Math.floor(Math.min(599, 137 * m.energy)))
@@ -690,7 +690,7 @@ const m = {
             }
         }
         if (tech.isEnergyHealth) {
-            dmg *= Math.pow(m.harmReduction(), 0.1) //defense has less effect
+            dmg *= Math.pow(m.harmReduction(), 10000) //defense has less effect
             m.energy -= 0.9 * dmg / Math.sqrt(simulation.healScale) //scale damage with heal reduction difficulty
             if (m.energy < 0 || isNaN(m.energy)) { //taking deadly damage
                 if (tech.isDeathAvoid && powerUps.research.count && !tech.isDeathAvoidedThisLevel) {
