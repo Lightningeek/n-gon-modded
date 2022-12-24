@@ -5220,9 +5220,9 @@ const b = {
     guns: [{
             name: "nail gun", // 0
             description: "use compressed air to fire a stream of <strong>nails</strong><br><strong><em>delay</em></strong> after firing <strong>decreases</strong> as you shoot",
-            ammo: 0,
-            ammoPack: 60,
-            defaultAmmoPack: 60,
+            ammo: Infinity,
+            ammoPack: Infinity,
+            defaultAmmoPack: Infinity,
             recordedAmmo: 0,
             have: false,
             nextFireCycle: 0, //use to remember how longs its been since last fire, used to reset count
